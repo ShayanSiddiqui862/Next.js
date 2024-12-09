@@ -6,7 +6,7 @@ import post3 from "@/images/post3.png";
 export default function Lastdiv() {
   const posts = [
     {
-      image: post1, // Directly assign the imported image
+      image: post1,
       title: "Loudest à la Madison #1 (L'integral)",
       description:
         "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
@@ -32,31 +32,32 @@ export default function Lastdiv() {
   ];
 
   return (
-    <div className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 absolute top-[4400px]">
+    <div className="bg-gray-50 py-12 px-6 lg:px-8 absolute top-[4400px]">
       {/* Header Section */}
-      <div className="text-center mb-12">
+      <header className="text-center mb-12 space-y-4">
         <p className="text-blue-500 text-sm font-semibold uppercase">
           Practice Advice
         </p>
         <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
           Featured Posts
         </h2>
-        <p className="mt-3 text-base text-gray-500 sm:mt-4">
+        <p className="text-base text-gray-500">
           Problems trying to resolve the conflict between the two major realms
           of Classical physics: Newtonian mechanics.
         </p>
-      </div>
+      </header>
 
       {/* Posts Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {posts.map((post, index) => (
-          <div
+          <article
             key={index}
             className="bg-white shadow-lg rounded-lg overflow-hidden"
           >
+            {/* Image Section */}
             <div className="relative">
               <Image
-                src={post.image} // Use the image directly
+                src={post.image}
                 alt={`Post ${index + 1}`}
                 width={400}
                 height={250}
@@ -66,17 +67,17 @@ export default function Lastdiv() {
                 New
               </span>
             </div>
+
+            {/* Content Section */}
             <div className="p-6">
               <p className="text-sm text-gray-500 mb-1">Google Trending New</p>
-              <h3 className="text-lg font-semibold text-gray-900">
-                {post.title}
-              </h3>
+              <h3 className="text-lg font-semibold text-gray-900">{post.title}</h3>
               <p className="mt-2 text-sm text-gray-500">{post.description}</p>
-              <div className="mt-4 flex items-center justify-between text-gray-500 text-sm">
+              <div className="mt-4 flex items-center justify-between text-sm text-gray-500">
                 <div className="flex items-center space-x-2">
                   <span className="flex items-center">
                     <svg
-                      className="h-4 w-4 text-gray-400"
+                      className="h-4 w-4 text-gray-400 mr-1"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
                       fill="currentColor"
@@ -96,7 +97,7 @@ export default function Lastdiv() {
                 </a>
               </div>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </div>

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import puc from "@/images/product-cover-5 (1).png"
 import CardText from "./card-test";
 import pic2 from "@/images/product-cover-5 (1).png";
@@ -9,12 +9,15 @@ import pic6 from "@/images/product-cover-5 (5).png";
 import pic7 from "@/images/product-cover-5 (6).png";
 import pic8 from "@/images/product-cover-5 (7).png";
 
+const productImages: StaticImageData[] = [puc, pic2, pic3, pic4, pic5, pic6, pic7, pic8];
+
 export default function ProductCard() {
   return (
     <div className="w-screen absolute top-[1470px] left-0 flex justify-center">
-      <div className="w-[1124px] py-[80px] flex flex-col gap-[80px]">
+      <div className="max-w-[1124px] py-[80px] flex flex-col gap-[80px]">
+        
         {/* Text Section */}
-        <div className="w-full flex flex-col gap-[10px] justify-center items-center">
+        <div className="text-center space-y-[10px]">
           <h4 className="font-Montserrat font-normal text-[20px] leading-[30px] text-[#737373]">
             Featured Products
           </h4>
@@ -28,21 +31,28 @@ export default function ProductCard() {
 
         {/* Card Section */}
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px]">
-          {/* Product Cards */}
-          {[puc, pic2, pic3, pic4, pic5, pic6, pic7, pic8].map(
-            (pic, index) => (
-              <div key={index} className="w-[238px] h-[615px] mx-auto">
-                <div className="w-full h-full">
-                  <div className="w-[239px] h-[427px]">
-                    <Image src={pic} alt={`picture${index + 1}`} />
-                  </div>
-                  <CardText />
-                </div>
-              </div>
-            )
-          )}
+          {productImages.map((image, index) => (
+            <ProductCardItem key={index} image={image} altText={`picture${index + 1}`} />
+          ))}
         </div>
+
       </div>
     </div>
   );
 }
+
+interface ProductCardItemProps {
+  image: StaticImageData; // Use StaticImageData type for images imported via next/image
+  altText: string; // Type for the alt text
+}
+
+const ProductCardItem: React.FC<ProductCardItemProps> = ({ image, altText }) => (
+  <div className="w-[238px] h-[615px] mx-auto">
+    <div className="w-full h-full">
+      <div className="w-[239px] h-[427px]">
+        <Image src={image} alt={altText} layout="responsive" width={239} height={427} />
+      </div>
+      <CardText />
+    </div>
+  </div>
+);

@@ -1,4 +1,4 @@
-import BlueHeader from "./components/blue-header";
+import BlueHeader from "./components/header-1";
 import Carausel from "./components/carousel";
 import Editors from "./components/editors-pick";
 import Footer from "./components/footer";
@@ -16,8 +16,12 @@ export default function Home(){
       <Carausel/>
       <Editors/>
       <ProductCard/>
+      <div className="mt-5 pb-[200px]" >
       <GreenDiv/>
+      </div>
+      <div className="pb-[50px] ">
       <Whitediv/>
+      </div>
       <Lastdiv/>
       <Footer/>
            
