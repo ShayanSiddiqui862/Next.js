@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Resume Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Static Resume</h1>
+  </header>
+
+  <main>
+    <section id="resume">
+      <div class="personal-info">
+        <h2 class="name">Shayan Siddiqui</h2>
+        <p class="contact">Email: muhammadshayansiddiqui55@gmail.com | Phone: 0330 4019489</p>
+      </div>
+      
+      <div class="section" id="education-section">
+        <h3 onclick="toggleSection('education')">Education
+            <span class="arrow">▼</span>
+        </h3>
+        <div class="content">
+          <p>Currently doing Bachelor of Engineering in Electrical Engineering, NED University</p>
+          <p>Currently doing IT Course from governor house</p>
+        </div>
+      </div>
+      
+      <div class="section" id="experience-section">
+        <h3 onclick="toggleSection('experience')">Work Experience
+            <span class="arrow">▼</span>
+        </h3>
+        
+        <div class="content">
+          <p></p>
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="section" id="skills-section">
+        <h3 onclick="toggleSection('skills')">Skills</h3>
+        <div class="content">
+          <p>JavaScript, TypeScript, HTML, CSS, Python, React.js, Next.js, Tailwind CSS</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

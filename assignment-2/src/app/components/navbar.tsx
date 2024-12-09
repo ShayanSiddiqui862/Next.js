@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Montserrat } from "next/font/google";
-import icon from "../public/icon.jpg"; // Use your icon image here
+
 import Link from "next/link";
 
 const montserrat = Montserrat({
@@ -65,16 +65,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Icon */}
-          <div className=" ml-[1296px] w-[24px] h-[13.71]">
-            <Image
-              src={icon}
-              alt="icon"
-              width={13.71}
-              height={24}
-              className="top-[39px] absolute left-1/2-translate-x-[24px]"
-            />
-          </div>
+         
         </div>
       </nav>
     </div>

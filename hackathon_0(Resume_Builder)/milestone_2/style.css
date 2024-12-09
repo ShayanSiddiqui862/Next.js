@@ -1,0 +1,172 @@
+/* Body and Layout */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+}
+
+/* Main Heading */
+.main-heading {
+  font-size: 2.5rem;
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin: 20px 0;
+}
+
+/* Form Section */
+#form-section {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 25px;
+  margin: 20px 0;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+#form-section h2 {
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+}
+
+#resume-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#resume-form label {
+  color: #444;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+#resume-form input,
+#resume-form textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+#resume-form input:focus,
+#resume-form textarea:focus {
+  border-color: #2980b9;
+}
+
+#resume-form button {
+  padding: 12px;
+  font-size: 1rem;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#resume-form button:hover {
+  background: linear-gradient(to right, #0072ff, #00c6ff);
+}
+
+/* Resume Section */
+#resume {
+  width: 90%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.personal-info {
+  text-align: center;
+  color: #333;
+}
+
+.name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.contact {
+  color: #555;
+}
+
+/* Subheadings */
+.sub-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 10px;
+  background: linear-gradient(to right, #f39c12, #e74c3c);
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sub-heading:hover {
+  background: linear-gradient(to right, #e74c3c, #f39c12);
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.arrow.rotate {
+  transform: rotate(180deg);
+}
+
+/* Content */
+.content {
+  display: none;
+  padding: 10px;
+  color: #444;
+  font-size: 1rem;
+}
+
+.content.show {
+  display: block;
+}
+
+/* Editable Sections */
+[contenteditable="true"] {
+  background: #f9f9f9;
+  border: 1px dashed #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* PDF Download Button */
+#download-btn {
+  display: block;
+  padding: 12px;
+  font-size: 1rem;
+  margin: 20px auto;
+  background: linear-gradient(to right, #16a085, #2ecc71);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#download-btn:hover {
+  background: linear-gradient(to right, #2ecc71, #16a085);
+}

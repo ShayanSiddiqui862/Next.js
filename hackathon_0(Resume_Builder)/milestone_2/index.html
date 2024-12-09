@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Resume Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1 class="main-heading">Interactive Resume</h1>
+  </header>
+
+ 
+  <section id="form-section">
+    <form id="resume-form" onsubmit="handleFormSubmit(event)">
+      <h2>Fill Your Details</h2>
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <h3>Education</h3>
+      <textarea id="education" name="education" rows="3" placeholder="E.g., B.Sc. in Computer Science, XYZ University"></textarea>
+
+      <h3>Work Experience</h3>
+      <textarea id="experience" name="experience" rows="3" placeholder="E.g., Software Engineer at ABC Corp"></textarea>
+
+      <h3>Skills</h3>
+      <textarea id="skills" name="skills" rows="2" placeholder="E.g., JavaScript, TypeScript, HTML, CSS"></textarea>
+
+      <button type="submit">Generate Resume</button>
+    </form>
+  </section>
+
+
+  <main>
+    <section id="resume">
+      <div class="personal-info">
+        <h2 class="name" id="display-name"></h2>
+        <p class="contact" id="display-contact"></p>
+      </div>
+
+      <div class="section" id="education-section">
+        <h3 class="sub-heading" onclick="toggleSection('education')">Education</h3>
+        <div class="content" id="display-education" contenteditable="true"></div>
+        <div class="content" id="display-education"></div>
+      </div>
+
+      <div class="section" id="experience-section">
+        <h3 class="sub-heading" onclick="toggleSection('experience')">Work Experience</h3>
+        <div class="content" id="display-experience" contenteditable="true"></div>
+        <div class="content" id="display-experience"></div>
+      </div>
+
+      <div class="section" id="skills-section">
+        <h3 class="sub-heading" onclick="toggleSection('skills')">Skills</h3>
+        <div class="content" id="display-skills" contenteditable="true"></div>
+        <div class="content" id="display-skills"></div>
+      </div>
+    </section>
+  </main>
+  <button id="download-btn" onclick="downloadPDF()">Download Resume as PDF</button>
+
+  <script src="app.js"></script>
+</body>
+</html>
