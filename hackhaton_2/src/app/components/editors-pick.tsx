@@ -8,7 +8,7 @@ export default function Editors(){
     return(
         <div className={`${montserrat.className} flex flex-col sm:pl-[195px] w-full flex-grow flex-wrap sm:pr-[195px] pt-[80px] pb-[80px] gap-[48px] items-center bg-[#FAFAFA] `}>
            <div className="flex flex-col gap-[10px] items-center">
-              <h4 className=" text-[24px] font-bold leading-[32px] tracking-[0.2px]">EDITOR'S PICK</h4>
+              <h4 className=" text-[24px] font-bold leading-[32px] tracking-[0.2px]">EDITOR&apos;S PICK</h4>
               <p className="text-[14px] font-normal  leading-[20px] tracking-[0.2]">Problems trying to resolve the conflict between</p>
            </div>
            <div className="flex flex-col sm:flex-row gap-[30px]">
