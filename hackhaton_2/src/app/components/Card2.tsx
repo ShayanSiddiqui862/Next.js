@@ -25,7 +25,7 @@ const Card2: React.FC<CardProps> = ({
                     <p className="text-[12px]  leading-[16px] text-[#737373] font-normal tracking-[0.2px]">New</p>
                 </div>
                  <h1 className="text-[20px]  leading-[30px] text-[#252B42] font-normal tracking-[0.2px]">Loudest à la Madison #1 (L&apos;integral)</h1>
-                 <p className="text-[14px]  leading-[20px] text-[#737373] font-normal tracking-[0.2px]">We focus on ergonomics and meeting you where you work. It's only a keystroke away.</p>
+                 <p className="text-[14px]  leading-[20px] text-[#737373] font-normal tracking-[0.2px]">We focus on ergonomics and meeting you where you work. It&apos;s only a keystroke away.</p>
                  <div className="flex flex-row justify-between pt-[15px] pb-[15px]">
                        <div className="text-[12px]  leading-[16px] text-[#737373] font-normal tracking-[0.2px]">22 April 2021</div>
                        <div className="text-[12px]  leading-[16px] text-[#737373] font-normal tracking-[0.2px]">10 comments</div>
