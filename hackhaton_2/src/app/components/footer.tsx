@@ -10,7 +10,7 @@ const montserrat = Montserrat({
 })
 export default function Footer(){
     return(
-        <div className={`${montserrat.className}  flex flex-col w-full h-[1342px] sm:h-[488px] pt-[1400px] pl-[46px] sm:pl-0 sm:pt-0`}>
+        <div className={`${montserrat.className}  flex flex-col w-full h-[1342px] sm:h-[488px] pt-[1500px] pl-[46px] sm:pl-0 sm:pt-0`}>
             <div className="flex flex-col pb-[53px] sm:pt-[0] sm:flex-row sm:pl-[145px] sm:pr-[145px] w-full h-[142px] pt-[53px] bg-[#FAFAFA] justify-between">
                 <h1 className="font-bold text-[#252B42] text-[24px] leading-[32px] tracking-[0.1px]">Bandage</h1>
                  <div className="flex flex-row gap-[20px]">

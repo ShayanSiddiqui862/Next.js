@@ -9,7 +9,7 @@ const montserrat = Montserrat({
 export default function White (){
 
     return(
-        <div className={`${montserrat.className} h-[682px] flex flex-col sm:flex-row gap-[30px]   items-center`}>
+        <div className={`${montserrat.className} h-[682px] flex flex-col sm:flex-row gap-[30px] w-full  items-center`}>
             <div className="sm:ml-[100px] sm:mr-[58px] order-2 sm:order-1">
                 <Image src={couple} alt = 'couple.png'/>
             </div>

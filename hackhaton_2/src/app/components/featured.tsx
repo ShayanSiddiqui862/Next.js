@@ -5,7 +5,7 @@ import post3 from "../images/post3.png"
 
 export default function Featured(){
     return(
-        <div className="h-[1044px] flex flex-col sm:pl-[145px] sm:pt-[112px] pt-[400px] sm:pr-[145px] gap-[80px]" >
+        <div className="h-[1044px] flex flex-col w-full sm:pl-[145px] sm:pt-[112px] pt-[400px] sm:pr-[145px] gap-[80px]" >
             <div className="flex flex-col gap-[10px] items-center order-1">
                 <h1 className="font-bold text-[#23A6F0] leading-[24px] tracking-[0.2px] text-[14px] ">Practice Advice</h1>
                 <h2 className="font-bold text-[40px] leading-[50px] tracking-[0.2px] text-[#252B42]">Featured Posts</h2>

@@ -7,7 +7,7 @@ const montserrat = Montserrat({
 })
 export default function Carousel(){
     return(
-        <div className= {`${montserrat.className}  bg-[url('/women.jpg')] bg-cover bg-center mt-[400px] sm:mt-0 sm:h-[716px] text-white`}>
+        <div className= {`${montserrat.className}  bg-[url('/women.jpg')] bg-cover bg-center mt-[400px] sm:mt-0 sm:h-[716px] text-white w-full`}>
             <div className="w-full h-[716px] pt-[208px] pb-[208px] flex flex-col gap-[30px] pl-[197.5px]">
                <h2 className="font-bold text-[16px] leading-[24px] tracking-[0.1px]">SUMMER 2020</h2>
                <h3 className="text-[58px] leading-[80px] tracking-[0.2px] font-bold">NEW COLLECTION</h3>

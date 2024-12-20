@@ -17,7 +17,7 @@ const montserrat = Montserrat({
 
 export default function Best(){
     return(
-        <div className={`flex flex-col ${montserrat.className}`}>
+        <div className={`flex flex-col ${montserrat.className} w-full`}>
             <div className="items-center w-full gap-[10px] flex flex-col flex-wrap pt-[80px] ">
         <p className="text-[20px] font-normal leading-[30px] tracking-[0.2px] ">Featured Products</p>
         <h1 className="font-bold text-[24px] leading-[32px] tracking-[0.1px]">BESTSELLER PRODUCTS</h1>
