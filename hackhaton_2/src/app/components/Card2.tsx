@@ -16,8 +16,8 @@ const Card2: React.FC<CardProps> = ({
     image
 }) => {
     return(
-        <div className={`${montserrat.className} w-[348px] h-[606px] overflow-hidden items-center shadow-md flex-col `}>
-            <Image src={image} alt = "image.png" className="w-full object-cover h-[300px]"/>
+        <div className={`${montserrat.className} w-full sm:w-full sm1:w-full sm2:w-full sm3:w-full sm4:w-full sm5:w-full sm6:w-full sm7:w-full h-auto overflow-hidden items-center shadow-md flex-col `}>
+            <Image src={image} alt = "image.png" className="w-full object-cover h-fit"/>
             <div className=" flex flex-col gap-[10px] pt-[25px] pl-[25px] pr-[25px] pb-[35px] ">
                 <div className="flex flex-row gap-[15px] items-start">
                     <p className="font-normal text-[#8EC2F2] text-[12px] leading-[16px] tracking-[0.2px]">Google</p>

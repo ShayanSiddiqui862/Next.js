@@ -8,7 +8,7 @@ const montserrat = Montserrat({
 })
 export default function Carousel2(){
     return(
-        <div className={` ${montserrat.className} w-full h-[1165px] sm:h-[709px] bg-[#23856D] text-white`}>
+        <div className={` ${montserrat.className} w-full sm:w-full sm1:w-full sm2:w-full sm3:w-full sm4:w-full sm5:w-full sm6:w-full sm7:w-full h-auto sm:h-auto bg-[#23856D] text-white`}>
             <div className="flex flex-col sm:flex-row gap-[80px]  sm:pl-[209px] sm:pr-[209px]">
                 <div className="flex flex-col gap-[30px] sm:pt-[260px]">
                   <p className="font-normal text-[20px] leading-[30px] tracking-[0.2px]">SUMMER 2020</p>
@@ -20,7 +20,7 @@ export default function Carousel2(){
                   </div>
                 </div>
                 <div className="sm:pt-[249px]">
-                    <Image src={men} alt = 'men.png'  height={711}/>
+                    <Image src={men} alt = 'men.png'  layout="responsive"/>
                 </div>
             </div>
         </div>

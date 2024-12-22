@@ -3,6 +3,7 @@ import { MdOutlineEmail } from "react-icons/md";
 import { FaFacebook, FaYoutube } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
+
 import { Montserrat } from "next/font/google"
 const montserrat = Montserrat({
     subsets: ["latin"],
@@ -11,14 +12,14 @@ const montserrat = Montserrat({
 })
 export default function Header(){
     return(
-        <div className={ ` ${montserrat.className} hidden sm:flex sm:flex-row w-full  sm7:w-full h-[58px] bg-[#252B42] justify-between sm:px-[145px] px-0 text-white`}>
+        <div className={ ` ${montserrat.className} hidden sm:flex sm:flex-row w-full  h-[58px] sm:px-[145px] px-0 bg-[#23856D] justify-between  text-white`}>
             <div className = "flex flex-row gap-[10px] w-[435px] h-[46px] pb-4 pt-4 ">
                 <div className="flex flex-row gap-[5px]">
-                     <MdOutlinePhone/>
+                     <MdOutlinePhone />
                      <p className="text-[14px] leading-[24px] tracking-[0.2px]">(225) 555-0118</p>
                 </div>
                 <div className="flex flex-row gap-[5px]"> 
-                    <MdOutlineEmail />
+                     <MdOutlineEmail />
                     <p className="text-[14px] leading-[24px] tracking-[0.2px]">michelle.rivera@example.com</p>
                 </div>
             </div>

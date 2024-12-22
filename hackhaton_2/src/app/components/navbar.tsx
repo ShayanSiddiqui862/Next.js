@@ -10,31 +10,31 @@ const montserrat = Montserrat({
 })
 export default function Navbar(){
     return(
-        <div className={`${montserrat.className} flex sm:flex-row w-full h-[40px] mt-[14px] mb-[14px]  `}>
-            <div className="pl-[38px] w-[187px] items-start">
+        <div className={`${montserrat.className} flex sm:flex-row  h-auto w-full sm:w-full sm:h-[40px] mt-[14px] mb-[14px] px-0 sm:px-[145px]  `}>
+            <div className=" w-[187px] items-start">
                 <h1 className="leading-[32px] tracking-[0.1px] text-[24px] font-bold">Bandage</h1>
             </div>
-            <div className="w-screen flex flex-col sm:flex-row pl-[50px] justify-between ">
-                <div className="flex flex-col mt-[68px] sm:mt-0 sm:flex sm:flex-row w-[361px] text-[14px] font-semibold leading-[24px] tracking[0.2px] gap-[15px] pt-1 ">
-                   <Link href="./">Home</Link>
+            <div className="w-screen flex flex-col sm:flex-row pl-[50px] justify-between gap-[10px] sm:gap-0 ">
+                <div className="flex flex-col mt-[68px] sm:mt-0 sm:flex sm:flex-row w-[361px] text-[14px] font-bold leading-[24px] tracking[0.2px] text-[#737373] gap-[15px] pt-1 ">
+                   <Link href="./" >Home</Link>
                    <Link href="./Shop">Shop</Link>
                    <Link href="./About">About</Link>
                    <Link href="./Blog">Blog</Link>
                    <Link href="./Contact">Contact</Link>
                    <Link href="./">Pages</Link>
                 </div>
-                <div className="w-[321px] text-[#23A6F0] flex flex-col sm:flex-row">
-                    <div className="w-[166px]">
+                <div className=" text-[#23A6F0] flex flex-col sm:flex-row ml-0 sm:ml-[40px] gap-[10px] sm:gap-[46px] ">
+                    <div className="">
                         <p className="">Login / Register</p>
                     </div>
-                    <div className="flex flex-col sm:flex-row mt-1" >
-                        <div className="w-[46px]">
+                    <div className="flex flex-col sm:flex-row mt-1 gap-[10px] sm:gap-[46px] " >
+                        <div className="">
                         <IoIosSearch />
                         </div>
-                        <div className="w-[46px]">
+                        <div className="">
                         <BsCart2 />
                         </div>
-                        <div className="w-[46px]">
+                        <div className="">
                         <CiHeart />
                         </div>
                      </div>

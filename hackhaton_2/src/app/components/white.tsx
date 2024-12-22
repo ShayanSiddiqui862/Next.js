@@ -9,8 +9,8 @@ const montserrat = Montserrat({
 export default function White (){
 
     return(
-        <div className={`${montserrat.className} h-[682px] flex flex-col sm:flex-row gap-[30px] w-full  items-center`}>
-            <div className="sm:ml-[100px] sm:mr-[58px] order-2 sm:order-1">
+        <div className={`${montserrat.className} h-auto flex flex-col sm:flex-row gap-[30px] mx-[40px] sm:mx-0 pt-[40px] sm:pt-0 w-full sm:w-full sm1:w-full sm2:w-full sm3:w-full sm4:w-full sm5:w-full sm6:w-full sm7:w-full   items-center`}>
+            <div className="sm:ml-[100px] mr-[58px] order-2 sm:order-1 ">
                 <Image src={couple} alt = 'couple.png'/>
             </div>
             <div className="flex flex-col gap-[30px] order-1 sm:pr-[200px] sm:order-2 ">

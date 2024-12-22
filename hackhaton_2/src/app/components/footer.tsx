@@ -10,8 +10,8 @@ const montserrat = Montserrat({
 })
 export default function Footer(){
     return(
-        <div className={`${montserrat.className}  flex flex-col w-full h-[1342px] sm:h-[488px] pt-[1500px] pl-[46px] sm:pl-0 sm:pt-0`}>
-            <div className="flex flex-col pb-[53px] sm:pt-[0] sm:flex-row sm:pl-[145px] sm:pr-[145px] w-full h-[142px] pt-[53px] bg-[#FAFAFA] justify-between">
+        <div className={`${montserrat.className}  flex flex-col w-full sm:w-full sm1:w-full sm2:w-full sm3:w-full sm4:w-full sm5:w-full sm6:w-full sm7:w-full h-[1342px] sm:h-[488px] pt-[53px]   sm:pl-0 sm:pt-0`}>
+            <div className="flex flex-col pb-[53px] sm:pt-[53px]  sm:flex-row sm:pl-[145px] sm:pr-[145px] pl-[46px] w-full h-[142px] pt-[53px] bg-[#FAFAFA] justify-between">
                 <h1 className="font-bold text-[#252B42] text-[24px] leading-[32px] tracking-[0.1px]">Bandage</h1>
                  <div className="flex flex-row gap-[20px]">
                  <FaFacebook color="#23A6F0" className="w-[23px] h-[23px]"/>
@@ -21,7 +21,7 @@ export default function Footer(){
                  </div>
 
             </div>
-            <div className="w-full h-[272px] grid sm:grid-cols-6 grid-row-6  sm:pl-[145px] pt-[50px] gap-[30px]">
+            <div className="w-full h-[272px] grid sm:grid-cols-6 grid-row-6  sm:pl-[145px] pt-[50px] gap-[30px] pl-[46px]">
                 <div className="flex flex-col gap-[20px]">
                     <h1 className="font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]">Company Info</h1>
                     <Link href="./About" className="font-bold text-[#737373] text-[14px] leading-[24px] tracking-[0.2px]">About Us</Link>
@@ -70,7 +70,7 @@ export default function Footer(){
                 
 
             </div>
-            <div className="w-full h-[74px] bg-[#FAFAFA] pt-[25px] mt-[850px] sm:mt-0 sm:pl-[145px]">
+            <div className="w-full h-[74px] bg-[#FAFAFA] pt-[25px] mt-[850px] sm:mt-0 sm:pl-[145px] pl-[46px]">
                 <p className="font-bold text-[#737373] text-[14px] leading-[24px] tracking-[0.2px]">Made With Love By Finland All Right Reserved.  </p>
 
             </div>

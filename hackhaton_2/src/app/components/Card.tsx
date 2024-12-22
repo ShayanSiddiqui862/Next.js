@@ -12,7 +12,7 @@ const Card: React.FC<CardProps> = ({
  colorOptions = ["#23A6F0","#23856D","#E77C40","#252B42"]
 }) => {
   return (
-    <div className=" w-[400px] sm:w-[239px] h-[615px] bg-white shadow-lg rounded-lg overflow-hidden items-center">
+    <div className=" w-full sm1:w-full sm2:w-full sm3:w-full sm4:w-full sm5:w-full sm6:w-full sm7:w-full sm:w-full  h-auto bg-white shadow-lg rounded-lg overflow-hidden items-center">
       <Image className="w-full h-[427px] object-cover" src={image} alt="image.png"  />
       <div className="  pt-[25px] pr-[25px] pb-[35px] pl-[35px] items-center">
         <h2 className="text-lg font-semibold text-gray-800">Graphic Design</h2>
