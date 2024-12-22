@@ -60,9 +60,9 @@ export default function Footer(){
                 </div>
                 <div className="flex flex-col gap-[20px]">
                     <h1 className="font-bold text-[16px] leading-[24px] tracking-[0.1px]  text-[#252B42]">Get In Touch</h1>
-                    <div className="flex flex-row">
-                        <input type="text" placeholder="Your email" className="bg-[#E6E6E6] w-[321px] h-[58px] pl-[20px] rounded-[5px]"/>
-                        <button className="w-[117px] h-[58px] bg-[#23A6F0] text-white text-[14px] rounded-[5px] leading-[28px] tracking-[0.2px]">Subscribe</button>
+                    <div className="flex flex-col sm:flex-row">
+                        <input type="text" placeholder="Your email" className="bg-[#E6E6E6] w-auto h-[58px] pl-[20px] rounded-[5px]"/>
+                        <button className="w-auto h-[58px] bg-[#23A6F0] text-white text-[14px] rounded-[5px] leading-[28px] tracking-[0.2px]">Subscribe</button>
                     </div>
                     <p className="text-[12px] leading-[28px] tracking-[0.2px] text-[#737373]">Lorem ipsum dolor sit amet </p>
                 </div>
