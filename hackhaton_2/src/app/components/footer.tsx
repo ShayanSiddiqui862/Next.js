@@ -11,7 +11,7 @@ const montserrat = Montserrat({
 export default function Footer(){
     return(
         <div className={`${montserrat.className}  flex flex-col w-full sm:w-full sm1:w-full sm2:w-full sm3:w-full sm4:w-full sm5:w-full sm6:w-full sm7:w-full h-[1342px] sm:h-[488px] pt-[53px]   sm:pl-0 sm:pt-0`}>
-            <div className="flex flex-col pb-[53px] sm:pt-[53px]  sm:flex-row sm:pl-[145px] sm:pr-[145px] pl-[46px] w-full h-[142px] pt-[53px] bg-[#FAFAFA] justify-between">
+            <div className="flex flex-col pb-[53px] sm:pt-[53px]  sm:flex-row sm:pl-[145px] sm:pr-[145px] pl-[46px] w-full h-[142px] pt-[53px]  justify-between border  border-b-4">
                 <h1 className="font-bold text-[#252B42] text-[24px] leading-[32px] tracking-[0.1px]">Bandage</h1>
                  <div className="flex flex-row gap-[20px]">
                  <FaFacebook color="#23A6F0" className="w-[23px] h-[23px]"/>
@@ -62,7 +62,7 @@ export default function Footer(){
                     <h1 className="font-bold text-[16px] leading-[24px] tracking-[0.1px]  text-[#252B42]">Get In Touch</h1>
                     <div className="flex flex-col sm:flex-row">
                         <input type="text" placeholder="Your email" className="bg-[#E6E6E6] w-auto h-[58px] pl-[20px] rounded-[5px]"/>
-                        <button className="w-auto h-[58px] bg-[#23A6F0] text-white text-[14px] rounded-[5px] leading-[28px] tracking-[0.2px]">Subscribe</button>
+                        <button className="w-full h-[58px] bg-[#23A6F0] text-white text-[14px] rounded-[5px] leading-[28px] tracking-[0.2px]">Subscribe</button>
                     </div>
                     <p className="text-[12px] leading-[28px] tracking-[0.2px] text-[#737373]">Lorem ipsum dolor sit amet </p>
                 </div>

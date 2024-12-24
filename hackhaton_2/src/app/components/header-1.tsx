@@ -11,7 +11,7 @@ const montserrat = Montserrat({
 })
 export default function Header(){
     return(
-        <div className={ ` ${montserrat.className} hidden sm:flex sm:flex-row w-full  sm7:w-full h-[58px] bg-[#252B42] justify-between sm:px-[145px] px-0 text-white`}>
+        <div className={ `${montserrat.className} hidden sm:flex sm:flex-row w-full  sm7:w-full h-[58px] bg-[#252B42] justify-between sm:7px-[145px] px-0 text-white`}>
             <div className = "flex flex-row gap-[10px] w-[435px] h-[46px] pb-4 pt-4 ">
                 <div className="flex flex-row gap-[5px]">
                      <MdOutlinePhone/>
