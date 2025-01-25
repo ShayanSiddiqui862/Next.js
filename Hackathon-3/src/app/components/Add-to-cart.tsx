@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Slider from "react-slick";
-import Image, { StaticImageData } from "next/image";
+import Image  from "next/image";
 import { ToastContainer, toast , Bounce } from 'react-toastify';
 
 import { CiShoppingCart } from "react-icons/ci";

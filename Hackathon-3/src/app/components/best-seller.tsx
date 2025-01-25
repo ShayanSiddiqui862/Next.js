@@ -11,10 +11,10 @@ const montserrat = Montserrat({
 
 export default async function Best(){
     const data = await client.fetch(`*[_type == 'product' && isNew ]{
-  title,
-    _id,
-    price,
-    'imageURL': productImage.asset -> url,
+     title,
+     _id,
+      price,
+     'imageURL': productImage.asset -> url,
      isNew,
      "slug": slug.current
 }`);
