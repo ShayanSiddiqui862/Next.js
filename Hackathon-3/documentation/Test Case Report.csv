@@ -1,0 +1,8 @@
+Test Case ID,Test Case Description,Test Steps,Expected Result,Actual Result,Status,Severity Level,Assigned To,Remarks
+TC001,Validate product listing page,Open product page > Verify products,Products displayed correctly,Products displayed correctly,Passed,Low,-,No issues found
+TC002,Test API error handling,Disconnect API > Refresh page,Show fallback UI with error message,Error message shown,Passed,Medium,-,Handled gracefully
+TC003,Check cart functionality,Add product to cart > Verify cart contents,Cart updates with added product,Cart updates as expected,Passed,High,-,Works as expected
+TC004,Ensure responsiveness on mobile,Resize browser window > Check layout,Layout adjusts properly to screen size,Responsive layout working as intended,Passed,Medium,-,Test successful
+TC005,Check checkout functionality,Take input from user and place an order,Take input from user and place an order,Order Placed as well as store user info in  sanity,Passed,Medium,,Work as Expected
+TC006,Remove order from Cart,Remove from Cart>Verify of deletion of data,Remove an order from cart if user intended,Remove the data from cart perfectly,passed,Medium,,Work as Expected
+TC007,Notifications ,User add to Cart> Notification appeared,Notify the user on the basis of interactivity,Notified user as needed,Passed,Low,,Work as Expected
