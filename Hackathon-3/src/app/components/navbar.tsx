@@ -1,8 +1,10 @@
+"use client"
 import Link from "next/link"
 import { BsCart2 } from "react-icons/bs";
 import { IoIosSearch } from "react-icons/io";
 import { CiHeart } from "react-icons/ci";
 import { Montserrat } from "next/font/google"
+import { SignedIn, SignedOut, SignIn, SignInButton, UserButton } from "@clerk/clerk-react";
 
 const montserrat = Montserrat({
     subsets: ["latin"],
@@ -26,7 +28,15 @@ export default function Navbar(){
                 </div>
                 <div className=" text-[#23A6F0] flex flex-col sm:flex-row ml-0 sm:ml-[40px] gap-[10px] sm:gap-[46px] ">
                     <div className="">
-                        <p className="">Login / Register</p>
+                    <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+          <UserButton />
+            
+            
+        
+          </SignedIn>
                     </div>
                     <div className="flex flex-col sm:flex-row mt-1 gap-[10px] sm:gap-[46px] " >
                         <div className="">
