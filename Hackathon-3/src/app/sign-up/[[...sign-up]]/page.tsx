@@ -26,7 +26,7 @@ interface User{
   Sign: () => void;
   type:string;
 }
-export default function SignUp(data:User){
+export default function SignUp(){
     const { isLoaded, signUp, setActive } = useSignUp()
     const [emailAddress, setEmailAddress] = React.useState('')
     const [password, setPassword] = React.useState('')
