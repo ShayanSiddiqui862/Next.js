@@ -28,6 +28,7 @@
     "react-slick": "^0.30.3",
     "react-toastify": "^11.0.3",
     "sanity": "^3.70.0",
+    "stripe": "^17.6.0",
     "styled-components": "^6.1.14",
     "swr": "^2.3.0",
     "tailwind-merge": "^2.6.0",
