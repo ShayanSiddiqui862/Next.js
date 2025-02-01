@@ -3,7 +3,7 @@
 import * as React from 'react'
 import { useSignUp } from '@clerk/nextjs'
 import { useRouter } from 'next/navigation'
-import User from '@/app/types/usedata'
+
 
 import { Bounce, ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -18,6 +18,14 @@ import { client } from '@/sanity/lib/client'
 // import Navbar from "../components/navbar";
 // import Form from "../components/form"
 // import Footer from "../components/footer";
+interface User{
+  firstname:string;
+  lastname:string;
+  email:string;
+  pass:string;
+  Sign: () => void;
+  type:string;
+}
 export default function SignUp(data:User){
     const { isLoaded, signUp, setActive } = useSignUp()
     const [emailAddress, setEmailAddress] = React.useState('')
@@ -188,8 +196,7 @@ if (verifying) {
                 <FaApple className="text-xl" />
                 Sign up with Apple
             </button> */}
-            <ToastContainer position="bottom-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick={false} rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="colored" transition={Bounce}
-/>
+            <ToastContainer position="bottom-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick={false} rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="colored" transition={Bounce}/>
             
         </div>
     </form>
