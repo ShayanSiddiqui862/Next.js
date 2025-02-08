@@ -1,48 +1,60 @@
 "use client";
 import React, { useState } from "react";
 import Slider from "react-slick";
-import Image  from "next/image";
-import { ToastContainer, toast , Bounce } from 'react-toastify';
-
+import Image from "next/image";
+import { ToastContainer, toast, Bounce } from 'react-toastify';
 import { CiShoppingCart } from "react-icons/ci";
 
-interface list{
-    description: string,
-    price:string,
-    title:string,
-    image: string
+interface Product {
+  id: string;
+  description: string;
+  price: number;
+  title: string;
+  image: string;
+  quantity?: number;
 }
-export default  function  ProductPage (main:list)  {
+
+export default function ProductPage(main: Product) {
   const notify = () => toast('Added Item To Your Cart');
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
-  const handleClick = (main: list) => {
-    const cart = JSON.parse(localStorage.getItem('cart') || '{}');
-    if (cart[main.title]) {
-      cart[main.title] = {
-        ...cart[main.title],
-        quantity: cart[main.title].quantity + 1,
-      };
-    } else {
-      cart[main.title] = { ...main, quantity: 1 };
-    }
 
-    localStorage.setItem('cart', JSON.stringify(cart));
+  const handleAddToCart = (product: Product) => {
+    try {
+      // Get existing cart or initialize as array
+      const existingCart: Product[] = JSON.parse(localStorage.getItem('cart') || '[]');
+      
+      // Check if product already exists in cart
+      const existingProduct = existingCart.find(item => item.id === product.id);
+      
+      if (existingProduct) {
+        // Update quantity if exists
+        existingProduct.quantity = (existingProduct.quantity || 1) + 1;
+      } else {
+        // Add new product with quantity 1
+        existingCart.push({ ...product, quantity: 1 });
+      }
+      
+      // Save back to localStorage
+      localStorage.setItem('cart', JSON.stringify(existingCart));
+      notify();
+    } catch (error) {
+      console.error('Error adding to cart:', error);
+      toast.error('Failed to add item to cart');
+    }
   };
 
+  const { description, price, title, image } = main;
+  const images = [image];
 
-  const{description, price,title , image} = main;
-  const images = [image]
-
-  const colors = ["#5A5A5A", "#008000", "#0044CC", "#FFA500", "#000000"]; // Color options
+  const colors = ["#5A5A5A", "#008000", "#0044CC", "#FFA500", "#000000"];
 
   const settings = {
-    dots: true, // Enable navigation dots
-    infinite: false, // Loop through images
-    speed: 500, // Transition speed
-    slidesToShow: 1, // Display one slide at a time
-    slidesToScroll: 1, // Scroll one slide at a time
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
   };
-
 
   return (
     <div className="max-w-7xl mx-auto p-4 grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -94,11 +106,11 @@ export default  function  ProductPage (main:list)  {
           <span className="text-yellow-500 text-lg">★★★★★</span>
           <span className="text-gray-600">(10 Reviews)</span>
         </div>
-        <p className="text-2xl font-semibold text-blue-600">${price}</p>
+        <p className="text-2xl font-semibold text-blue-600">${price.toFixed(2)}</p>
         <p className="text-green-600 font-semibold">In Stock</p>
 
         <p className="text-gray-600 mt-4">
-         {description}
+          {description}
         </p>
 
         {/* Color Options */}
@@ -123,24 +135,28 @@ export default  function  ProductPage (main:list)  {
           <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
             Select Options
           </button>
-          <button  onClick={() => handleClick(main)}className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200">
-          <CiShoppingCart onClick={notify} />
+          <button 
+            onClick={() => handleAddToCart(main)}
+            className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200"
+          >
+            <CiShoppingCart />
           </button>
         </div>
       </div>
+      
       <ToastContainer
-             position="bottom-right"
-             autoClose={5000}
-             hideProgressBar={false}
-             newestOnTop={false}
-             closeOnClick={false}
-              rtl={false}
-             pauseOnFocusLoss
-             draggable
-             pauseOnHover
-              theme="light"
-             transition={Bounce}/>
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition={Bounce}
+      />
     </div>
   );
 };
-

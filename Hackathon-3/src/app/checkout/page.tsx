@@ -1,49 +1,125 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const CheckoutPage: React.FC = () => {
-    const [loading, setLoading] = useState(false);
+interface Product {
+  id: string;
+  name: string;
+  price: number;
+  image: string;
+  quantity: number;
+}
 
-    const handleCheckout = async () => {
-        setLoading(true);
-        try {
-            const response = await fetch("/api/payement", { // Fixed API route spelling
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    product: { name: "Sample Product", price: 20 }, // Fixed: Send product data
-                }),
-            });
+interface CartItem {
+  [key: string]: {
+    price: number;
+    quantity: number;
+    image: string; // Add image to the cart item
+  };
+}
 
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
+export default function CheckoutPage() {
+  const [loading, setLoading] = useState(false);
+  const [cart, setCart] = useState<Product[]>([]);
 
-            const data = await response.json();
-            if (data.url) {
-                window.location.href = data.url;
-            }
-        } catch (error) {
-            console.error("Error:", error);
-        } finally {
-            setLoading(false);
+  useEffect(() => {
+    const loadCart = () => {
+      try {
+        const rawData = localStorage.getItem("cart");
+        if (!rawData) {
+          setCart([]);
+          return;
         }
+
+        const savedCart: CartItem = JSON.parse(rawData);
+
+        // Convert object format to array format
+        const cartArray = Object.entries(savedCart).map(([name, details]) => ({
+          id: name, // Use the product name as the ID (consistent with storage)
+          name,
+          price: details.price,
+          image: details.image, // Ensure image is included
+          quantity: details.quantity || 1, // Default to 1 if missing
+        }));
+
+        setCart(cartArray);
+      } catch (error) {
+        console.error("Failed to load cart:", error);
+        setCart([]);
+      }
     };
 
-    return (
-        <div className="flex flex-col items-center justify-center min-h-screen">
-            <h1 className="text-2xl font-bold mb-4">Stripe Hosted Checkout</h1>
-            <button
-                onClick={handleCheckout}
-                className="bg-blue-500 text-white px-6 py-3 rounded-lg"
-                disabled={loading}
-            >
-                {loading ? "Redirecting..." : "Checkout"}
-            </button>
-        </div>
-    );
-};
+    loadCart();
+  }, []);
 
-export default CheckoutPage;
+  const handleCheckout = async () => {
+    if (!cart.length) return;
+
+    setLoading(true);
+    try {
+      const response = await fetch("/api/payment", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          items: cart.map((item) => ({
+            name: item.name,
+            price: item.price,
+          })),
+        }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Payment failed");
+      }
+
+      const { url } = await response.json();
+      window.location.href = url;
+    } catch (error) {
+      console.error("Checkout Error:", error);
+      alert(error instanceof Error ? error.message : "Checkout failed");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      <h1 className="text-2xl font-bold mb-4">Checkout</h1>
+
+      {cart.length > 0 ? (
+        <>
+          <div className="mb-4">
+            {cart.map((item) => (
+              <div key={item.id} className="flex items-center gap-4 mb-2">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-20 h-20 object-cover"
+                />
+                <div>
+                  <h3 className="font-semibold">{item.name}</h3>
+                  <p>${item.price.toFixed(2)}</p>
+                  <p>Quantity: {item.quantity}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <button
+            onClick={handleCheckout}
+            disabled={loading}
+            className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 disabled:bg-gray-400"
+          >
+            {loading
+              ? "Processing..."
+              : `Pay $${cart
+                  .reduce((sum, item) => sum + item.price * item.quantity, 0)
+                  .toFixed(2)}`}
+          </button>
+        </>
+      ) : (
+        <div className="text-lg">Your cart is empty</div>
+      )}
+    </div>
+  );
+}
