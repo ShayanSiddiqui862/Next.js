@@ -35,7 +35,7 @@ export default async function page({ params }: Props) {
           <Header />
           <Navbar />
           <Shopcards />
-           <ProductPage price={data[0].price} description={data[0].description} title={data[0].title} image={data[0].imageUrl} /> 
+           <ProductPage id={data[0]._id} price={data[0].price} description={data[0].description} title={data[0].title} image={data[0].imageUrl} /> 
           <Best />
           <Companies />
           <Footer />
